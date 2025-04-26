@@ -28,7 +28,7 @@ local_folder <- choose.dir()
 local_folder <- paste0(gsub("\\\\", "/", local_folder),"/")
 
 # Load model code
-source("code/1_ahle_model_growout_v6_1.R")
+source("code/1_ahle_model_growout_v6.R")
 
 ## Run model for each scenario
 scenario_file <- "data/example_params_feedlot.xlsx"

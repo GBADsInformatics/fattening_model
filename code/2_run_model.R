@@ -49,7 +49,7 @@ cycle_length_max <- max(as.numeric(ahle_scenarios[ahle_scenarios$'parameter'=="c
 
 # Loop through scenario columns, calling the function for each
 for (COLNAME in ahle_scenarios_cln){
-  print('> Running AHLE scenario:')
+  print('> Running model scenario:')
   print(COLNAME)
   
   scenario_data <- ahle_scenarios[c("parameter", COLNAME)]

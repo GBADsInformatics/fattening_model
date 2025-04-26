@@ -1,11 +1,11 @@
 ##################
-# file name: ahle_model_growout_v6_1.R
+# file name: ahle_model_growout_v6.R
 # created by: Anne Meyer
 # created on: 2024-01-19
 ##################
 
 # =================================================================
-# GBADs AHLE model for grow-out farms - v6.1
+# GBADs AHLE model for grow-out farms - v6
 # This code reads an Excel file which defines the scenarios to run.
 # Model definition :
 # =================================================================

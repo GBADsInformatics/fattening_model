@@ -1,0 +1,5 @@
+# Ignore model outputs in 'outputs' directory
+outputs/*
+
+# Ignore plot files in 'figures' directory
+figures/*
