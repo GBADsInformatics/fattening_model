@@ -1,0 +1,35 @@
+variable,parameter
+area_used,Production area in use (in square meters)
+average_daily_gain,Average daily weight gain per individual (g)
+cycle_length,Cycle length (days)
+fcr,Feed conversion ratio
+feed_amount,Amount of feed (kg)
+feed_cost,Feed costs
+gm_proportion,Gross margin (% of revenue)
+gross_margin,Gross margin
+harvest_biomass,Biomass harvested (kg liveweight)
+harvest_dressed_weight,Individual dressed weight (kg)
+harvest_live_weight,Individual harvest liveweight (kg)
+harvest_number,Number harvested
+harvest_value,Harvest revenue
+health_cost,Animal health costs
+labour_cost,Labour costs
+n_cycles_farm,Number of cycles per year (per farm)
+other_cost,Other variable costs
+sold_biomass,Total dressed weight (kg)
+sold_number,Number passing inspection
+stocking_cost,Stocking costs
+variable_costs,Total variable costs
+num_stocked,Number of animals stocked
+stocking_weight,Individual weight at stocking (kg)
+daily_feed,Daily feed requirement (proportion of liveweight)
+labour_amount_health,Amount of health-related labour (personne.days per kg liveweight produced)
+labour_amount_non_health,Amount of non-health-related labour (personne.days per kg liveweight produced)
+health_exp,Animal health expenditure (per kg liveweight produced)
+rejection_rate,"Rejection rate (antemortem + whole carcass, as a proportion)"
+dressing_prop,Dressing percentage (as a proportion of liveweight)
+seed_price,Price per head stocked (local currency unit)
+sale_price,Farm-gate sale price (local currency unit per kg dressed)
+feed_price,Feed price (local currency unit per kg)
+labour_price,Labour price (local currency unit per personne.day)
+other_price,Other operational costs (local currency unit per kg liveweight produced)
