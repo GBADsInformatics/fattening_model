@@ -210,10 +210,10 @@ if (nrow(my_values)>1) {
 summary_inputs$exchange_rate<-exchange_rate
 
 ## Save inputs and outputs to files
-write.csv(summary_inputs, paste0(local_folder,"outputs/summary_inputs.csv"), row.names=FALSE)
-write.csv(all_outputs, paste0(local_folder,"outputs/all_outputs.csv"), row.names=FALSE)
-write.csv(all_mortality, paste0(local_folder,"outputs/all_mortality.csv"), row.names=FALSE)
-write.csv(all_growth, paste0(local_folder,"outputs/all_growth.csv"), row.names=FALSE)
-write.csv(all_liveweight, paste0(local_folder,"outputs/all_liveweight.csv"), row.names=FALSE)
-write.csv(all_biomass, paste0(local_folder,"outputs/all_biomass.csv"), row.names=FALSE)
-write.csv(all_population, paste0(local_folder,"outputs/all_population.csv"), row.names=FALSE)
+write.csv(summary_inputs, "outputs/summary_inputs.csv", row.names=FALSE)
+write.csv(all_outputs, "outputs/all_outputs.csv", row.names=FALSE)
+write.csv(all_mortality, "outputs/all_mortality.csv", row.names=FALSE)
+write.csv(all_growth, "outputs/all_growth.csv", row.names=FALSE)
+write.csv(all_liveweight, "outputs/all_liveweight.csv", row.names=FALSE)
+write.csv(all_biomass, "outputs/all_biomass.csv", row.names=FALSE)
+write.csv(all_population, "outputs/all_population.csv", row.names=FALSE)

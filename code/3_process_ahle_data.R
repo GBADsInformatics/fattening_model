@@ -7,9 +7,9 @@
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Read and prepare the datasets
-data_full <- read.csv(paste0(local_folder,"outputs/all_outputs.csv"))
+data_full <- read.csv("outputs/all_outputs.csv")
 param_names <- read.csv("data/ahle_params_english_names.csv")
-input_params <- read.csv(paste0(local_folder,"outputs/summary_inputs.csv"))
+input_params <- read.csv("outputs/summary_inputs.csv")
 conv_rate <- unique(input_params$exchange_rate) # local currency unit to USD, average exchange rate for year of interest
 input_params$exchange_rate <- NULL
 
@@ -113,7 +113,7 @@ gross_margin_plot <-
       theme_bw() +
       theme(text = element_text(size = 16))
 
-ggsave(filename = paste0(local_folder,"figures/gross_margin_plot.tiff"), plot = gross_margin_plot, dpi = 300, width = 26, height = 20, units = "cm")
+ggsave(filename = "figures/gross_margin_plot.tiff", plot = gross_margin_plot, dpi = 300, width = 26, height = 20, units = "cm")
 
 ## Cost categories as a stacked bar chart for each scenario 
 cost_plot <- 
@@ -126,7 +126,7 @@ cost_plot <-
       theme_bw() +
       theme(text = element_text(size = 20)) 
 
-ggsave(filename = paste0(local_folder,"figures/cost_plot.tiff"), plot = cost_plot, dpi = 300, width = 20, height = 10, units = "cm")
+ggsave(filename = "figures/cost_plot.tiff", plot = cost_plot, dpi = 300, width = 20, height = 10, units = "cm")
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Proceed with AHLE calculations per cycle or per year
@@ -263,7 +263,7 @@ ahle_generic_plot_usd <- ahle_results_year %>%
   theme_bw() +
   theme(text = element_text(size = 16))
 
-ggsave(filename = paste0(local_folder,"figures/ahle_generic_plot_usd.tiff"), plot = ahle_generic_plot_usd, dpi = 300, width = 10, height = 10, units = "cm")
+ggsave(filename = "figures/ahle_generic_plot_usd.tiff", plot = ahle_generic_plot_usd, dpi = 300, width = 10, height = 10, units = "cm")
 
 ahle_generic_plot_currency <- ahle_results_year %>%
   filter(disease!="Other causes", AHLE_type=="AHLEtot") %>%
@@ -276,7 +276,7 @@ ahle_generic_plot_currency <- ahle_results_year %>%
   theme_bw() +
   theme(text = element_text(size = 16))
 
-ggsave(filename = paste0(local_folder,"figures/ahle_generic_plot_currency.tiff"), plot = ahle_generic_plot_currency, dpi = 300, width = 10, height = 10, units = "cm")
+ggsave(filename = "figures/ahle_generic_plot_currency.tiff", plot = ahle_generic_plot_currency, dpi = 300, width = 10, height = 10, units = "cm")
 
 ahle_generic_plot_currency_other <- ahle_results_year %>%
   filter(disease!="All causes", AHLE_type=="AHLEtot") %>%
@@ -289,7 +289,7 @@ ahle_generic_plot_currency_other <- ahle_results_year %>%
   theme_bw() +
   theme(text = element_text(size = 16), legend.position = "none")
 
-ggsave(filename = paste0(local_folder,"figures/ahle_generic_plot_currency_other.tiff"), plot = ahle_generic_plot_currency_other, dpi = 300, width = 13, height = 10, units = "cm")
+ggsave(filename = "figures/ahle_generic_plot_currency_other.tiff", plot = ahle_generic_plot_currency_other, dpi = 300, width = 13, height = 10, units = "cm")
 
 ## Plots describing AHLE components
 donut_plot_components <- ahle_results_year %>%
@@ -317,7 +317,7 @@ donut_plot_components <- ahle_results_year %>%
         ) +
   facet_grid(~disease)
 
-ggsave(filename = paste0(local_folder,"figures/donut_plot_components.tiff"), plot = donut_plot_components, dpi = 300, width = 20, height = 20, units = "cm")
+ggsave(filename = "figures/donut_plot_components.tiff", plot = donut_plot_components, dpi = 300, width = 20, height = 20, units = "cm")
 
 donut_plot_all_only <- ahle_results_year %>%
   filter(AHLE_type!="AHLEtot", AHLE_type!="AHLEtot_ton", disease=="All causes") %>%
@@ -340,7 +340,7 @@ donut_plot_all_only <- ahle_results_year %>%
         panel.grid = element_blank()
         )
 
-ggsave(filename = paste0(local_folder,"figures/donut_plot_all_only.tiff"), plot = donut_plot_all_only, dpi = 300, width = 20, height = 20, units = "cm")
+ggsave(filename = "figures/donut_plot_all_only.tiff", plot = donut_plot_all_only, dpi = 300, width = 20, height = 20, units = "cm")
 
 component_attribution_plot <- ahle_results_year %>%
   filter(AHLE_type!="AHLEtot", AHLE_type!="AHLEtot_ton", disease!="All causes") %>%
@@ -353,7 +353,7 @@ component_attribution_plot <- ahle_results_year %>%
   theme_bw() +
   theme(text = element_text(size = 12), axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "none")
 
-ggsave(filename = paste0(local_folder,"figures/component_attribution_plot.tiff"), plot = component_attribution_plot, dpi = 300, width = 18, height = 15, units = "cm")
+ggsave(filename = "figures/component_attribution_plot.tiff", plot = component_attribution_plot, dpi = 300, width = 18, height = 15, units = "cm")
 
 component_attribution_plot_perc <- ahle_results_year %>%
   filter(AHLE_type!="AHLEtot", AHLE_type!="AHLEtot_ton", disease!="All causes") %>%
@@ -368,7 +368,7 @@ component_attribution_plot_perc <- ahle_results_year %>%
   theme_bw() +
   theme(text = element_text(size = 12), axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "none")
 
-ggsave(filename = paste0(local_folder,"figures/component_attribution_plot_perc.tiff"), plot = component_attribution_plot_perc, dpi = 300, width = 18, height = 15, units = "cm")
+ggsave(filename = "figures/component_attribution_plot_perc.tiff", plot = component_attribution_plot_perc, dpi = 300, width = 18, height = 15, units = "cm")
 
 ## Treemap for AHLE components
 attribution_data <- ahle_results_year %>%
@@ -420,7 +420,7 @@ attribution_donut_plot <- ahle_results_year %>%
         panel.grid = element_blank(),
         )
 
-ggsave(filename = paste0(local_folder,"figures/attribution_donut_plot.tiff"), plot = attribution_donut_plot, dpi = 300, width = 10, height = 10, units = "cm")
+ggsave(filename = "figures/attribution_donut_plot.tiff", plot = attribution_donut_plot, dpi = 300, width = 10, height = 10, units = "cm")
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Input parameter graphs
@@ -439,7 +439,7 @@ common_params_plot <- input_params %>%
   theme_bw() +
   theme(text = element_text(size = 12)) 
 
-ggsave(filename = paste0(local_folder,"figures/common_params_plot.tiff"), plot = common_params_plot, dpi = 300, width = 16, height = 10, units = "cm")
+ggsave(filename = "figures/common_params_plot.tiff", plot = common_params_plot, dpi = 300, width = 16, height = 10, units = "cm")
 
 ## FCR
 fcr_params_plot <- input_params %>% 
@@ -452,7 +452,7 @@ fcr_params_plot <- input_params %>%
   theme_bw() +
   theme(text = element_text(size = 12), strip.text.y = element_blank()) 
 
-ggsave(filename = paste0(local_folder,"figures/fcr_params_plot.tiff"), plot = fcr_params_plot, dpi = 300, width = 10, height = 6, units = "cm")
+ggsave(filename = "figures/fcr_params_plot.tiff", plot = fcr_params_plot, dpi = 300, width = 10, height = 6, units = "cm")
 
 ## Table of fixed parameters
 fixed_params_ft <- input_params %>% filter(type=="Point") %>% 
@@ -468,7 +468,7 @@ fixed_params_ft <- input_params %>% filter(type=="Point") %>%
 
 ## Mortality
 ## static in example. change plot to a line graph if varying mort rates per production day
-mort_data <- read.csv(paste0(local_folder,"outputs/all_mortality.csv"))
+mort_data <- read.csv("outputs/all_mortality.csv")
 mortality_plot <- mort_data %>% 
   filter(production_day==1) %>%
   ggplot(aes(x=scenario, y=mean, fill=scenario)) +
@@ -481,11 +481,11 @@ mortality_plot <- mort_data %>%
   theme_bw() +
   theme(text = element_text(size = 14)) 
 
-ggsave(filename = paste0(local_folder,"figures/mortality_plot.tiff"), plot = mortality_plot, dpi = 300, width = 30, height = 10, units = "cm")
+ggsave(filename = "figures/mortality_plot.tiff", plot = mortality_plot, dpi = 300, width = 30, height = 10, units = "cm")
 
 ## ADG
 ## static in example. change plot to a line graph if varying growth rates per production day
-growth_data <- read.csv(paste0(local_folder,"outputs/all_growth.csv"))
+growth_data <- read.csv("outputs/all_growth.csv")
 growth_plot <- growth_data %>% 
   filter(production_day==1) %>% 
   ggplot(aes(x=scenario, y=mean ,fill=scenario)) +
@@ -498,10 +498,10 @@ growth_plot <- growth_data %>%
   theme_bw() +
   theme(text = element_text(size = 14)) 
 
-ggsave(filename = paste0(local_folder,"figures/growth_plot.tiff"), plot = growth_plot, dpi = 300, width = 30, height = 10, units = "cm")
+ggsave(filename = "figures/growth_plot.tiff", plot = growth_plot, dpi = 300, width = 30, height = 10, units = "cm")
 
 ## Individual liveweight
-liveweight_data <- read.csv(paste0(local_folder,"outputs/all_liveweight.csv"))
+liveweight_data <- read.csv("outputs/all_liveweight.csv")
 liveweight_plot <- liveweight_data %>% 
   filter(scenario %in% c("Current", "Ideal", "Minus_CauseX")) %>%
   ggplot(aes(x=production_day, y=mean, fill=scenario, colour=scenario)) +
@@ -515,10 +515,10 @@ liveweight_plot <- liveweight_data %>%
   #facet_wrap(~scenario) +
   guides(colour = "none")
 
-ggsave(filename = paste0(local_folder,"figures/liveweight_plot.tiff"), plot = liveweight_plot, dpi = 300, width = 20, height = 20, units = "cm")
+ggsave(filename = "figures/liveweight_plot.tiff", plot = liveweight_plot, dpi = 300, width = 20, height = 20, units = "cm")
    
 ## Biomass present 
-biomass_data <- read.csv(paste0(local_folder,"outputs/all_biomass.csv"))
+biomass_data <- read.csv("outputs/all_biomass.csv")
 biomass_plot <- biomass_data %>% 
   filter(scenario %in% c("Current", "Ideal", "Minus_CauseX")) %>%
   left_join(area_used, by="scenario") %>%
@@ -534,5 +534,5 @@ biomass_plot <- biomass_data %>%
   #facet_wrap(~scenario) +
   guides(colour = "none")
 
-ggsave(filename = paste0(local_folder,"figures/biomass_plot.tiff"), plot = biomass_plot, dpi = 300, width = 20, height = 20, units = "cm")
+ggsave(filename = "figures/biomass_plot.tiff", plot = biomass_plot, dpi = 300, width = 20, height = 20, units = "cm")
 
